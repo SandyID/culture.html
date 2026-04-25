@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>African Community Dresden e.V. – Culture Group</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #fdf8f0;
+  --surface: #ffffff;
+  --card: #fff9f0;
+  --green: #2d6a4f;
+  --green2: #40916c;
+  --gold: #e8a020;
+  --gold2: #f4c542;
+  --red: #c1440e;
+  --text: #1a1a1a;
+  --muted: #7a7060;
+  --border: #e8dfc8;
+  --radius: 18px;
+  --shadow: 0 4px 24px rgba(45,106,79,0.10);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 16px 48px;
+  background-image:
+    radial-gradient(ellipse at 90% 10%, rgba(232,160,32,0.13) 0%, transparent 55%),
+    radial-gradient(ellipse at 5% 80%, rgba(45,106,79,0.10) 0%, transparent 50%);
+}
+
+.container { width: 100%; max-width: 500px; }
+
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+  animation: fadeDown 0.6s ease both;
+}
+.logo-ring {
+  width: 72px; height: 72px;
+  background: linear-gradient(135deg, var(--green), var(--gold));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 14px;
+  box-shadow: 0 4px 20px rgba(45,106,79,0.25);
+}
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--green);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.header .sub { color: var(--muted); font-size: 0.85rem; }
+
+.progress-wrap {
+  margin-bottom: 22px;
+  animation: fadeDown 0.6s 0.1s ease both;
+}
+.progress-info {
+  display: flex; justify-content: space-between;
+  font-size: 12px; color: var(--muted); margin-bottom: 7px; font-weight: 600;
+}
+.progress-bar { height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  border-radius: 99px;
+  transition: width 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.45s ease both;
+}
+
+.q-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--green2);
+  margin-bottom: 8px;
+}
+.q-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; line-height: 1.45;
+  margin-bottom: 20px; color: var(--text);
+}
+
+/* INTRO TEXT */
+.intro-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+.intro-text .intro-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--green);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.intro-text p { margin-bottom: 12px; }
+.intro-text p:last-child { margin-bottom: 0; }
+.intro-text strong { color: var(--green); }
+
+.intro-btns { display: flex; flex-direction: column; gap: 10px; }
+.btn-interested {
+  background: linear-gradient(135deg, var(--green), var(--gold));
+  color: white; border: none; border-radius: 12px;
+  padding: 16px; font-family: 'Nunito', sans-serif;
+  font-size: 1rem; font-weight: 700; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(45,106,79,0.3);
+  transition: all 0.2s;
+}
+.btn-interested:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(45,106,79,0.4); }
+.btn-not-interested {
+  background: var(--card); color: var(--muted);
+  border: 1.5px solid var(--border); border-radius: 12px;
+  padding: 14px; font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-not-interested:hover { border-color: var(--muted); color: var(--text); }
+
+/* LANG */
+.lang-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.lang-btn {
+  background: var(--card); border: 2px solid var(--border);
+  border-radius: 14px; padding: 20px 12px;
+  cursor: pointer; text-align: center; transition: all 0.2s ease;
+  font-family: 'Nunito', sans-serif;
+}
+.lang-btn:hover { border-color: var(--green); background: rgba(45,106,79,0.05); transform: translateY(-2px); }
+.lang-flag { font-size: 2rem; display: block; margin-bottom: 6px; }
+.lang-name { font-weight: 700; font-size: 1rem; color: var(--green); }
+.lang-native { font-size: 0.8rem; color: var(--muted); }
+
+/* OPTIONS */
+.options { display: flex; flex-direction: column; gap: 9px; }
+.option {
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 13px 16px;
+  cursor: pointer; font-family: 'Nunito', sans-serif;
+  font-size: 0.93rem; font-weight: 500; color: var(--text);
+  text-align: left; transition: all 0.18s ease;
+  display: flex; align-items: center; gap: 11px;
+}
+.option::before {
+  content: ''; width: 18px; height: 18px; flex-shrink: 0;
+  border-radius: 50%; border: 2px solid var(--border); transition: all 0.18s ease;
+}
+.option:hover { border-color: var(--green2); background: rgba(64,145,108,0.06); transform: translateX(3px); }
+.option.selected { border-color: var(--green); background: rgba(45,106,79,0.08); }
+.option.selected::before { background: var(--green); border-color: var(--green); box-shadow: 0 0 0 3px rgba(45,106,79,0.18); }
+
+.option.checkbox::before { border-radius: 5px; }
+.option.checkbox.selected::before {
+  background: var(--green); border-color: var(--green);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='white' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 70%; background-repeat: no-repeat; background-position: center;
+}
+
+/* TEXT INPUT */
+.text-input {
+  width: 100%; background: var(--card);
+  border: 1.5px solid var(--border); border-radius: 12px;
+  padding: 13px 16px; font-family: 'Nunito', sans-serif;
+  font-size: 0.93rem; color: var(--text);
+  outline: none; transition: border-color 0.2s;
+}
+.text-input:focus { border-color: var(--green); }
+.text-input::placeholder { color: var(--muted); }
+textarea.text-input { resize: vertical; min-height: 80px; }
+
+.input-group { display: flex; flex-direction: column; gap: 12px; }
+.input-label { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+
+/* NAV */
+.nav { display: flex; gap: 10px; margin-top: 20px; }
+.btn {
+  flex: 1; padding: 14px; border-radius: 12px;
+  font-family: 'Nunito', sans-serif; font-size: 0.95rem; font-weight: 700;
+  cursor: pointer; transition: all 0.2s; border: none;
+}
+.btn-back {
+  background: var(--card); color: var(--muted);
+  border: 1.5px solid var(--border); flex: 0 0 auto; padding: 14px 18px;
+}
+.btn-back:hover { border-color: var(--muted); color: var(--text); }
+.btn-next { background: var(--green); color: white; box-shadow: 0 4px 16px rgba(45,106,79,0.28); }
+.btn-next:hover { background: var(--green2); transform: translateY(-1px); }
+.btn-next:disabled { background: var(--border); color: var(--muted); box-shadow: none; cursor: not-allowed; transform: none; }
+.btn-submit { background: linear-gradient(135deg, var(--green), var(--gold)); color: white; box-shadow: 0 4px 20px rgba(45,106,79,0.3); }
+.btn-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(45,106,79,0.4); }
+
+/* THANK YOU */
+.screen-ty { text-align: center; padding: 10px 0; animation: fadeUp 0.6s ease both; }
+.ty-icon {
+  width: 80px; height: 80px;
+  background: linear-gradient(135deg, rgba(45,106,79,0.15), rgba(232,160,32,0.15));
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 2.2rem; margin: 0 auto 18px;
+  border: 2px solid rgba(45,106,79,0.2);
+}
+.screen-ty h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--green); margin-bottom: 8px; }
+.screen-ty p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+/* NO INTEREST */
+.screen-no { text-align: center; padding: 10px 0; animation: fadeUp 0.6s ease both; }
+
+/* PIN */
+.pin-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--green); margin-bottom: 6px; }
+.pin-sub { color: var(--muted); font-size: 0.87rem; margin-bottom: 22px; }
+.pin-dots { display: flex; gap: 14px; justify-content: center; margin-bottom: 22px; }
+.pin-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--border); transition: all 0.2s; }
+.pin-dot.filled { background: var(--green); box-shadow: 0 0 8px rgba(45,106,79,0.4); }
+.pin-keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+.key {
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 16px;
+  font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 700;
+  cursor: pointer; color: var(--text); text-align: center; transition: all 0.15s;
+}
+.key:hover { background: var(--border); }
+.key:active { transform: scale(0.94); }
+.key.del { color: var(--muted); font-size: 1.2rem; }
+.key.empty { visibility: hidden; }
+.pin-error { color: var(--red); font-size: 0.84rem; text-align: center; margin-top: 12px; min-height: 18px; }
+
+/* RESULTS */
+.results-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.results-top h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--green); }
+.badge-count {
+  background: rgba(45,106,79,0.1); color: var(--green2);
+  border: 1px solid rgba(45,106,79,0.2);
+  font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 100px;
+}
+.r-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+.r-person-row {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+.r-person-row:last-of-type { border-bottom: none; }
+.r-person-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.8px; color: var(--muted); min-width: 100px; flex-shrink: 0; padding-top: 1px;
+}
+.r-person-value { color: var(--text); flex: 1; }
+
+.stats-box {
+  background: linear-gradient(135deg, rgba(45,106,79,0.08), rgba(232,160,32,0.08));
+  border: 1.5px solid var(--border); border-radius: 14px;
+  padding: 16px 20px; margin-bottom: 20px;
+  display: flex; gap: 16px;
+}
+.stat-item { flex: 1; text-align: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--green); font-weight: 700; }
+.stat-label { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+.stat-divider { width: 1px; background: var(--border); }
+
+.action-btn {
+  width: 100%; padding: 12px; border-radius: 10px;
+  font-family: 'Nunito', sans-serif; font-size: 0.875rem; font-weight: 700;
+  cursor: pointer; transition: all 0.2s; margin-top: 8px;
+}
+.btn-view-results { background: rgba(45,106,79,0.08); border: 1.5px solid rgba(45,106,79,0.25); color: var(--green); }
+.btn-view-results:hover { background: rgba(45,106,79,0.14); }
+.btn-clear { background: rgba(193,68,14,0.07); border: 1.5px solid rgba(193,68,14,0.2); color: var(--red); }
+.btn-clear:hover { background: rgba(193,68,14,0.13); }
+.btn-go-back { background: var(--card); border: 1.5px solid var(--border); color: var(--muted); }
+
+.hidden { display: none !important; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header" id="main-header">
+    <div class="logo-ring">🌍</div>
+    <h1>African Community<br>Dresden e.V.</h1>
+    <div class="sub" id="header-sub">Culture Group · Kulturgruppe</div>
+  </div>
+
+  <!-- SURVEY VIEW -->
+  <div id="survey-view">
+    <div class="progress-wrap" id="progress-wrap">
+      <div class="progress-info">
+        <span id="prog-label">Schritt 1</span>
+        <span id="prog-pct">0%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+    </div>
+    <div class="card" id="q-card"></div>
+    <div class="nav" id="nav">
+      <button class="btn btn-back hidden" id="btn-back" onclick="goBack()">←</button>
+      <button class="btn btn-next" id="btn-next" onclick="goNext()" disabled></button>
+    </div>
+  </div>
+
+  <!-- NO INTEREST -->
+  <div id="no-view" class="hidden">
+    <div class="card screen-no">
+      <div class="ty-icon">😊</div>
+      <h2 id="no-title" style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--green);margin-bottom:10px;">Kein Problem!</h2>
+      <p id="no-text" style="color:var(--muted);font-size:0.9rem;line-height:1.7;">Vielleicht ein anderes Mal.<br>Danke, dass du dir die Zeit genommen hast!</p>
+    </div>
+    <button class="action-btn btn-view-results" onclick="showPinScreen()" style="margin-top:14px;">🔐 <span id="no-results-btn">Ergebnisse ansehen</span></button>
+  </div>
+
+  <!-- THANK YOU -->
+  <div id="ty-view" class="hidden">
+    <div class="card screen-ty">
+      <div class="ty-icon">🙏</div>
+      <h2 id="ty-title">Vielen Dank!</h2>
+      <p id="ty-text">Deine Antworten wurden gespeichert.<br>Wir freuen uns auf deine Culture Group!</p>
+    </div>
+    <button class="action-btn btn-view-results" onclick="showPinScreen()" style="margin-top:14px;">🔐 <span id="results-btn-label">Ergebnisse ansehen</span></button>
+  </div>
+
+  <!-- PIN -->
+  <div id="pin-view" class="hidden">
+    <div class="card" style="animation: fadeUp 0.5s ease both;">
+      <div class="pin-title" id="pin-title">🔐 Ergebnisse</div>
+      <div class="pin-sub" id="pin-sub">Gib deinen PIN ein.</div>
+      <div class="pin-dots">
+        <div class="pin-dot" id="d0"></div><div class="pin-dot" id="d1"></div>
+        <div class="pin-dot" id="d2"></div><div class="pin-dot" id="d3"></div>
+      </div>
+      <div class="pin-keypad">
+        <div class="key" onclick="pinKey('1')">1</div><div class="key" onclick="pinKey('2')">2</div><div class="key" onclick="pinKey('3')">3</div>
+        <div class="key" onclick="pinKey('4')">4</div><div class="key" onclick="pinKey('5')">5</div><div class="key" onclick="pinKey('6')">6</div>
+        <div class="key" onclick="pinKey('7')">7</div><div class="key" onclick="pinKey('8')">8</div><div class="key" onclick="pinKey('9')">9</div>
+        <div class="key empty"></div><div class="key" onclick="pinKey('0')">0</div><div class="key del" onclick="pinDel()">⌫</div>
+      </div>
+      <div class="pin-error" id="pin-error"></div>
+    </div>
+    <button class="action-btn btn-go-back" onclick="pinGoBack()" style="margin-top:10px;" id="pin-back-btn">← Zurück</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results-view" class="hidden">
+    <div style="animation: fadeUp 0.5s ease both;">
+      <div class="results-top">
+        <h2>📋 Culture Group Antworten</h2>
+        <span class="badge-count" id="resp-count">...</span>
+      </div>
+      <div class="stats-box" id="stats-box">
+        <div class="stat-item">
+          <div class="stat-num" id="stat-interested">–</div>
+          <div class="stat-label">✅ Interesse</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num" id="stat-no">–</div>
+          <div class="stat-label">❌ Kein Interesse</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num" id="stat-total">–</div>
+          <div class="stat-label">👁 Gesamt</div>
+        </div>
+      </div>
+      <div id="results-body"></div>
+      <button class="action-btn btn-go-back" onclick="show('ty-view')" style="margin-top:16px;">← Zurück</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ════════════════════════════════════════
+//  CONFIG
+// ════════════════════════════════════════
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbxh_aAi9RuCce6bXpd2kdChrV9mt4S0ja3cTxFA1PsSLJUbmPfDA73Dx1CGOVNXngWK/exec";
+const ADMIN_PIN_HASH = "3761d931eeba3187c439da80d964972393b5820fea3ef9a3f5953b63948f51a3";
+const STORAGE_KEY = "acd_culture";
+
+// ════════════════════════════════════════
+//  TRANSLATIONS
+// ════════════════════════════════════════
+const T = {
+  de: {
+    step: "Schritt",
+    back: "← Zurück",
+    next: "Weiter →",
+    submit: "Absenden ✓",
+    header_sub: "Culture Group · Kulturgruppe",
+    intro_headline: "🌍 Deine Kultur. Deine Gruppe. Deine Bühne.",
+    intro_body: `<p>Jede Kultur trägt eine Geschichte in sich – Musik die bewegt, Tänze die verbinden, Mode die beeindruckt, Sprachen die Heimat bedeuten.</p>
+<p>Aber seien wir ehrlich – nicht jeder hat den Mut, nicht jeder hat die Persönlichkeit, nicht jeder hat das Besondere das es braucht, um diese Geschichte zu leben und zu zeigen.</p>
+<p><strong>Du schon.</strong></p>
+<p>Bei der African Community Dresden glauben wir: Menschen wie du verdienen eine Bühne. Deshalb laden wir dich ein – deine eigene <strong>Culture Group</strong> zu gründen. Dein Name. Deine Vision. Deine Community.</p>
+<p>Wir stehen hinter dir: mit Unterstützung, Raum und einem Platz auf unserer Homepage – damit Dresden weiß wer du bist und was du repräsentierst.</p>
+<p>Die Frage ist nicht ob jemand das machen sollte.<br><strong>Die Frage ist: Warum noch nicht du?</strong></p>`,
+    btn_interested: "🚀 Ich bin dabei!",
+    btn_not_interested: "❌ Kein Interesse",
+    no_title: "Kein Problem!",
+    no_text: "Vielleicht ein anderes Mal.\nDanke, dass du dir die Zeit genommen hast!",
+    ty_title: "Vielen Dank!",
+    ty_text: "Deine Antworten wurden gespeichert.\nWir melden uns bald bei dir!",
+    results_btn: "Ergebnisse ansehen",
+    pin_title: "🔐 Ergebnisse",
+    pin_sub: "Gib deinen PIN ein.",
+    pin_err: "Falscher PIN. Bitte erneut versuchen.",
+    q_name: "Wie heißt du?",
+    ph_name: "Vor- und Nachname",
+    q_contact: "Wie können wir dich erreichen?",
+    ph_phone: "WhatsApp / Telefonnummer",
+    ph_email: "E-Mail Adresse",
+    contact_hint: "Bitte mindestens eine Angabe machen",
+    q_culture: "Für welche Kultur oder welches Land möchtest du eine Gruppe gründen?",
+    ph_culture: "z.B. Nigeria, Kongo, Kenia, Kamerun...",
+    q_groupname: "Hast du schon einen Namen für deine Gruppe?",
+    ph_groupname: "z.B. Edo Cultural Group, Swahili Dresden...",
+    optional: "(optional)",
+    q_activities: "Was soll deine Gruppe machen?",
+    activities_hint: "Mehrfachauswahl möglich",
+    act_music: "🥁 Musik",
+    act_dance: "💃 Tanz",
+    act_fashion: "👗 Mode & Kleidung",
+    act_language: "🗣 Sprache",
+    act_art: "🎨 Kunst & Kultur",
+    act_own: "💡 Eigene Idee",
+    ph_own_act: "Beschreibe deine eigene Idee...",
+    q_solo: "Startest du alleine oder mit anderen?",
+    solo_alone: "🙋 Ich starte alleine",
+    solo_have: "👥 Ich habe schon Mitstreiter",
+    solo_search: "🔍 Ich suche noch Mitstreiter",
+    q_concrete: "Wie konkret ist deine Idee?",
+    concrete_clear: "✅ Ich habe eine klare Vorstellung",
+    concrete_rough: "💭 Noch eine grobe Idee",
+    concrete_open: "🌱 Ich bin neugierig und offen",
+    q_support: "Wobei brauchst du Unterstützung?",
+    support_hint: "Mehrfachauswahl möglich",
+    sup_promo: "📣 Werbung & Bekanntmachung",
+    sup_space: "🏠 Raum für Treffen",
+    sup_people: "👥 Mitstreiter finden",
+    sup_media: "📸 Fotos & Social Media",
+    sup_web: "🌐 Platz auf der Homepage",
+    sup_org: "📋 Organisation & Planung",
+    sup_dunno: "💡 Ich weiß es noch nicht genau",
+    sup_none: "🙌 Ich brauche nichts, ich habe alles",
+    q_homepage: "Möchtest du mit deiner Gruppe auf unserer Homepage erscheinen?",
+    hp_yes: "✅ Ja, gerne!",
+    hp_maybe: "🤔 Noch nicht sicher",
+    hp_no: "❌ Nein danke",
+    q_notes: "Noch etwas das du uns mitteilen möchtest?",
+    ph_notes: "Deine Ideen, Wünsche, Anmerkungen...",
+    label_name: "Name",
+    label_contact: "Kontakt",
+    label_culture: "Kultur / Land",
+    label_groupname: "Gruppenname",
+    label_activities: "Aktivitäten",
+    label_solo: "Umsetzung",
+    label_concrete: "Konkretheit",
+    label_support: "Unterstützung",
+    label_homepage: "Homepage",
+    label_notes: "Anmerkungen",
+    label_lang: "Sprache",
+  },
+  en: {
+    step: "Step",
+    back: "← Back",
+    next: "Next →",
+    submit: "Submit ✓",
+    header_sub: "Culture Group · Kulturgruppe",
+    intro_headline: "🌍 Your culture. Your group. Your stage.",
+    intro_body: `<p>Every culture carries a story – music that moves you, dances that connect, fashion that impresses, languages that mean home.</p>
+<p>But let's be honest – not everyone has the courage, not everyone has the personality, not everyone has that special something it takes to live and show that story.</p>
+<p><strong>You do.</strong></p>
+<p>At African Community Dresden we believe: people like you deserve a stage. That's why we invite you – to found your own <strong>Culture Group</strong>. Your name. Your vision. Your community.</p>
+<p>We stand behind you: with support, space and a place on our homepage – so Dresden knows who you are and what you represent.</p>
+<p>The question is not whether someone should do this.<br><strong>The question is: Why not you, and why not now?</strong></p>`,
+    btn_interested: "🚀 I'm in!",
+    btn_not_interested: "❌ Not interested",
+    no_title: "No problem!",
+    no_text: "Maybe another time.\nThank you for taking the time!",
+    ty_title: "Thank you!",
+    ty_text: "Your answers have been saved.\nWe'll be in touch soon!",
+    results_btn: "View Results",
+    pin_title: "🔐 Results",
+    pin_sub: "Enter your PIN.",
+    pin_err: "Wrong PIN. Please try again.",
+    q_name: "What is your name?",
+    ph_name: "First and last name",
+    q_contact: "How can we reach you?",
+    ph_phone: "WhatsApp / Phone number",
+    ph_email: "Email address",
+    contact_hint: "Please provide at least one",
+    q_culture: "For which culture or country would you like to found a group?",
+    ph_culture: "e.g. Nigeria, Congo, Kenya, Cameroon...",
+    q_groupname: "Do you already have a name for your group?",
+    ph_groupname: "e.g. Edo Cultural Group, Swahili Dresden...",
+    optional: "(optional)",
+    q_activities: "What should your group do?",
+    activities_hint: "Multiple selection possible",
+    act_music: "🥁 Music",
+    act_dance: "💃 Dance",
+    act_fashion: "👗 Fashion & Clothing",
+    act_language: "🗣 Language",
+    act_art: "🎨 Art & Culture",
+    act_own: "💡 My own idea",
+    ph_own_act: "Describe your own idea...",
+    q_solo: "Are you starting alone or with others?",
+    solo_alone: "🙋 I'm starting alone",
+    solo_have: "👥 I already have people",
+    solo_search: "🔍 I'm still looking for people",
+    q_concrete: "How concrete is your idea?",
+    concrete_clear: "✅ I have a clear vision",
+    concrete_rough: "💭 Still a rough idea",
+    concrete_open: "🌱 I'm curious and open",
+    q_support: "Where do you need support?",
+    support_hint: "Multiple selection possible",
+    sup_promo: "📣 Promotion & visibility",
+    sup_space: "🏠 Space for meetings",
+    sup_people: "👥 Finding people",
+    sup_media: "📸 Photos & Social Media",
+    sup_web: "🌐 Place on the homepage",
+    sup_org: "📋 Organisation & planning",
+    sup_dunno: "💡 I'm not sure yet",
+    sup_none: "🙌 I need nothing, I have everything",
+    q_homepage: "Would you like your group to appear on our homepage?",
+    hp_yes: "✅ Yes, please!",
+    hp_maybe: "🤔 Not sure yet",
+    hp_no: "❌ No thank you",
+    q_notes: "Anything else you'd like to tell us?",
+    ph_notes: "Your ideas, wishes, comments...",
+    label_name: "Name",
+    label_contact: "Contact",
+    label_culture: "Culture / Country",
+    label_groupname: "Group name",
+    label_activities: "Activities",
+    label_solo: "Approach",
+    label_concrete: "Concreteness",
+    label_support: "Support needed",
+    label_homepage: "Homepage",
+    label_notes: "Notes",
+    label_lang: "Language",
+  },
+  fr: {
+    step: "Étape",
+    back: "← Retour",
+    next: "Suivant →",
+    submit: "Envoyer ✓",
+    header_sub: "Groupe Culturel · Culture Group",
+    intro_headline: "🌍 Ta culture. Ton groupe. Ta scène.",
+    intro_body: `<p>Chaque culture porte une histoire en elle – une musique qui émeut, des danses qui unissent, une mode qui impressionne, des langues qui signifient la maison.</p>
+<p>Mais soyons honnêtes – tout le monde n'a pas le courage, tout le monde n'a pas la personnalité, tout le monde n'a pas ce quelque chose de spécial qu'il faut pour vivre et montrer cette histoire.</p>
+<p><strong>Toi, oui.</strong></p>
+<p>À l'African Community Dresden, nous croyons que des personnes comme toi méritent une scène. C'est pourquoi nous t'invitons – à fonder ton propre <strong>groupe culturel</strong>. Ton nom. Ta vision. Ta communauté.</p>
+<p>Nous sommes derrière toi : avec du soutien, un espace et une place sur notre site web – pour que Dresde sache qui tu es et ce que tu représentes.</p>
+<p>La question n'est pas de savoir si quelqu'un devrait le faire.<br><strong>La question est : Pourquoi pas toi, et pourquoi pas maintenant ?</strong></p>`,
+    btn_interested: "🚀 Je suis partant(e) !",
+    btn_not_interested: "❌ Pas intéressé(e)",
+    no_title: "Pas de problème !",
+    no_text: "Peut-être une autre fois.\nMerci d'avoir pris le temps !",
+    ty_title: "Merci beaucoup !",
+    ty_text: "Vos réponses ont été enregistrées.\nNous vous contacterons bientôt !",
+    results_btn: "Voir les résultats",
+    pin_title: "🔐 Résultats",
+    pin_sub: "Entrez votre code PIN.",
+    pin_err: "Code PIN incorrect. Veuillez réessayer.",
+    q_name: "Quel est votre nom ?",
+    ph_name: "Prénom et nom de famille",
+    q_contact: "Comment pouvons-nous vous contacter ?",
+    ph_phone: "WhatsApp / Numéro de téléphone",
+    ph_email: "Adresse e-mail",
+    contact_hint: "Veuillez indiquer au moins un contact",
+    q_culture: "Pour quelle culture ou quel pays souhaitez-vous fonder un groupe ?",
+    ph_culture: "ex. Nigeria, Congo, Kenya, Cameroun...",
+    q_groupname: "Avez-vous déjà un nom pour votre groupe ?",
+    ph_groupname: "ex. Edo Cultural Group, Swahili Dresden...",
+    optional: "(optionnel)",
+    q_activities: "Que doit faire votre groupe ?",
+    activities_hint: "Plusieurs choix possibles",
+    act_music: "🥁 Musique",
+    act_dance: "💃 Danse",
+    act_fashion: "👗 Mode & Vêtements",
+    act_language: "🗣 Langue",
+    act_art: "🎨 Art & Culture",
+    act_own: "💡 Ma propre idée",
+    ph_own_act: "Décrivez votre propre idée...",
+    q_solo: "Démarrez-vous seul(e) ou avec d'autres ?",
+    solo_alone: "🙋 Je démarre seul(e)",
+    solo_have: "👥 J'ai déjà des personnes avec moi",
+    solo_search: "🔍 Je cherche encore des personnes",
+    q_concrete: "À quel point votre idée est-elle concrète ?",
+    concrete_clear: "✅ J'ai une vision claire",
+    concrete_rough: "💭 Encore une idée vague",
+    concrete_open: "🌱 Je suis curieux/curieuse et ouvert(e)",
+    q_support: "Dans quels domaines avez-vous besoin de soutien ?",
+    support_hint: "Plusieurs choix possibles",
+    sup_promo: "📣 Promotion & visibilité",
+    sup_space: "🏠 Espace pour les réunions",
+    sup_people: "👥 Trouver des personnes",
+    sup_media: "📸 Photos & Réseaux sociaux",
+    sup_web: "🌐 Place sur le site web",
+    sup_org: "📋 Organisation & planification",
+    sup_dunno: "💡 Je ne sais pas encore",
+    sup_none: "🙌 Je n'ai besoin de rien",
+    q_homepage: "Souhaitez-vous que votre groupe apparaisse sur notre site web ?",
+    hp_yes: "✅ Oui, avec plaisir !",
+    hp_maybe: "🤔 Pas encore sûr(e)",
+    hp_no: "❌ Non merci",
+    q_notes: "Autre chose que vous souhaitez nous communiquer ?",
+    ph_notes: "Vos idées, souhaits, remarques...",
+    label_name: "Nom",
+    label_contact: "Contact",
+    label_culture: "Culture / Pays",
+    label_groupname: "Nom du groupe",
+    label_activities: "Activités",
+    label_solo: "Approche",
+    label_concrete: "Concrétisation",
+    label_support: "Soutien souhaité",
+    label_homepage: "Site web",
+    label_notes: "Remarques",
+    label_lang: "Langue",
+  }
+};
+
+// ════════════════════════════════════════
+//  STATE
+// ════════════════════════════════════════
+let lang = "de";
+let currentStep = 0;
+let answers = {};
+let selectedActivities = [];
+let selectedSupport = [];
+let pinGoBackTarget = "ty-view";
+
+const FLOW = ["lang","intro","name","contact","culture","groupname","activities","solo","concrete","support","homepage","notes"];
+
+// ════════════════════════════════════════
+//  HELPERS
+// ════════════════════════════════════════
+const t = () => T[lang];
+
+function show(id) {
+  ["survey-view","ty-view","no-view","pin-view","results-view"].forEach(v =>
+    document.getElementById(v).classList.add("hidden")
+  );
+  document.getElementById(id).classList.remove("hidden");
+  const navEl = document.getElementById("nav");
+  const progEl = document.getElementById("progress-wrap");
+  if (id === "survey-view") {
+    navEl.classList.remove("hidden");
+  }
+}
+
+function isAnswered(stepId) {
+  if (stepId === "lang") return !!answers.lang;
+  if (stepId === "intro") return true;
+  if (stepId === "name") return !!(answers.name && answers.name.trim());
+  if (stepId === "contact") return !!(
+    (answers.phone && answers.phone.trim()) || (answers.email && answers.email.trim())
+  );
+  if (stepId === "culture") return !!(answers.culture && answers.culture.trim());
+  if (stepId === "groupname") return true;
+  if (stepId === "activities") return selectedActivities.length > 0;
+  if (stepId === "solo") return !!answers.solo;
+  if (stepId === "concrete") return !!answers.concrete;
+  if (stepId === "support") return selectedSupport.length > 0;
+  if (stepId === "homepage") return !!answers.homepage;
+  if (stepId === "notes") return true;
+  return true;
+}
+
+// ════════════════════════════════════════
+//  RENDER
+// ════════════════════════════════════════
+function render() {
+  const stepId = FLOW[currentStep];
+  const total = FLOW.length;
+  const pct = Math.round((currentStep / (total - 1)) * 100);
+
+  document.getElementById("prog-fill").style.width = pct + "%";
+  document.getElementById("prog-label").textContent = t().step + " " + (currentStep + 1);
+  document.getElementById("prog-pct").textContent = pct + "%";
+
+  const btnBack = document.getElementById("btn-back");
+  const btnNext = document.getElementById("btn-next");
+
+  if (currentStep > 0 && stepId !== "intro") {
+    btnBack.classList.remove("hidden");
+  } else {
+    btnBack.classList.add("hidden");
+  }
+  btnBack.textContent = t().back;
+
+  const isLast = currentStep === FLOW.length - 1;
+  btnNext.textContent = isLast ? t().submit : t().next;
+  btnNext.className = "btn " + (isLast ? "btn-submit" : "btn-next");
+  btnNext.disabled = !isAnswered(stepId);
+
+  // Hide nav for intro and lang steps (they have their own buttons)
+  const navEl = document.getElementById("nav");
+  if (stepId === "intro") {
+    navEl.classList.add("hidden");
+  } else {
+    navEl.classList.remove("hidden");
+  }
+
+  const card = document.getElementById("q-card");
+  card.style.animation = "none"; card.offsetHeight;
+  card.style.animation = "fadeUp 0.4s ease both";
+  card.innerHTML = buildStep(stepId);
+}
+
+function buildStep(stepId) {
+  if (stepId === "lang") return buildLang();
+  if (stepId === "intro") return buildIntro();
+  if (stepId === "name") return buildName();
+  if (stepId === "contact") return buildContact();
+  if (stepId === "culture") return buildCulture();
+  if (stepId === "groupname") return buildGroupname();
+  if (stepId === "activities") return buildActivities();
+  if (stepId === "solo") return buildSolo();
+  if (stepId === "concrete") return buildConcrete();
+  if (stepId === "support") return buildSupport();
+  if (stepId === "homepage") return buildHomepage();
+  if (stepId === "notes") return buildNotes();
+  return "";
+}
+
+function buildLang() {
+  return `
+    <div class="q-label">Willkommen · Welcome · Bienvenue</div>
+    <div class="q-text">Bitte wähle deine Sprache.<br><small style="font-family:Nunito;font-size:0.85rem;color:var(--muted)">Please choose your language. · Choisissez votre langue.</small></div>
+    <div class="lang-grid">
+      <button class="lang-btn" onclick="chooseLang('de',event)"><span class="lang-flag">🇩🇪</span><div class="lang-name">Deutsch</div><div class="lang-native">German</div></button>
+      <button class="lang-btn" onclick="chooseLang('en',event)"><span class="lang-flag">🇬🇧</span><div class="lang-name">English</div><div class="lang-native">Anglais</div></button>
+      <button class="lang-btn" onclick="chooseLang('fr',event)"><span class="lang-flag">🇫🇷</span><div class="lang-name">Français</div><div class="lang-native">Französisch</div></button>
+    </div>`;
+}
+
+function buildIntro() {
+  return `
+    <div class="intro-text">
+      <div class="intro-headline">${t().intro_headline}</div>
+      ${t().intro_body}
+    </div>
+    <div class="intro-btns">
+      <button class="btn-interested" onclick="chooseInterested()">${t().btn_interested}</button>
+      <button class="btn-not-interested" onclick="chooseNotInterested()">${t().btn_not_interested}</button>
+    </div>`;
+}
+
+function buildName() {
+  return `
+    <div class="q-label">${t().step} 3</div>
+    <div class="q-text">${t().q_name}</div>
+    <input type="text" class="text-input" placeholder="${t().ph_name}"
+      oninput="onText('name',this.value)" value="${answers.name||''}">`;
+}
+
+function buildContact() {
+  return `
+    <div class="q-label">${t().step} 4</div>
+    <div class="q-text">${t().q_contact}</div>
+    <div class="input-group">
+      <div>
+        <div class="input-label">📱 WhatsApp / Telefon</div>
+        <input type="tel" class="text-input" placeholder="${t().ph_phone}"
+          oninput="onContactChange()" id="inp-phone" value="${answers.phone||''}">
+      </div>
+      <div>
+        <div class="input-label">📧 E-Mail</div>
+        <input type="email" class="text-input" placeholder="${t().ph_email}"
+          oninput="onContactChange()" id="inp-email" value="${answers.email||''}">
+      </div>
+      <div style="font-size:0.8rem;color:var(--muted);text-align:center;">${t().contact_hint}</div>
+    </div>`;
+}
+
+function buildCulture() {
+  return `
+    <div class="q-label">${t().step} 5</div>
+    <div class="q-text">${t().q_culture}</div>
+    <input type="text" class="text-input" placeholder="${t().ph_culture}"
+      oninput="onText('culture',this.value)" value="${answers.culture||''}">`;
+}
+
+function buildGroupname() {
+  return `
+    <div class="q-label">${t().step} 6 <span style="font-weight:400;text-transform:none;letter-spacing:0;">${t().optional}</span></div>
+    <div class="q-text">${t().q_groupname}</div>
+    <input type="text" class="text-input" placeholder="${t().ph_groupname}"
+      oninput="onTextOptional('groupname',this.value)" value="${answers.groupname||''}">`;
+}
+
+function buildActivities() {
+  const acts = [
+    ["music", t().act_music],
+    ["dance", t().act_dance],
+    ["fashion", t().act_fashion],
+    ["language", t().act_language],
+    ["art", t().act_art],
+    ["own", t().act_own],
+  ];
+  const showOwnField = selectedActivities.includes("own");
+  return `
+    <div class="q-label">${t().step} 7</div>
+    <div class="q-text">${t().q_activities}<br><small style="font-family:Nunito;font-size:0.82rem;color:var(--muted)">${t().activities_hint}</small></div>
+    <div class="options">
+      ${acts.map(([v,l]) => `<button class="option checkbox${selectedActivities.includes(v)?' selected':''}" onclick="toggleActivity('${v}',this)">${l}</button>`).join("")}
+    </div>
+    ${showOwnField ? `<textarea class="text-input" style="margin-top:12px;" placeholder="${t().ph_own_act}"
+      oninput="onTextOptional('ownActivity',this.value)">${answers.ownActivity||''}</textarea>` : ""}`;
+}
+
+function buildSolo() {
+  const opts = [
+    ["alone", t().solo_alone],
+    ["have", t().solo_have],
+    ["search", t().solo_search],
+  ];
+  return `
+    <div class="q-label">${t().step} 8</div>
+    <div class="q-text">${t().q_solo}</div>
+    <div class="options">
+      ${opts.map(([v,l]) => `<button class="option${answers.solo===v?' selected':''}" onclick="selectOption('solo','${v}',this)">${l}</button>`).join("")}
+    </div>`;
+}
+
+function buildConcrete() {
+  const opts = [
+    ["clear", t().concrete_clear],
+    ["rough", t().concrete_rough],
+    ["open", t().concrete_open],
+  ];
+  return `
+    <div class="q-label">${t().step} 9</div>
+    <div class="q-text">${t().q_concrete}</div>
+    <div class="options">
+      ${opts.map(([v,l]) => `<button class="option${answers.concrete===v?' selected':''}" onclick="selectOption('concrete','${v}',this)">${l}</button>`).join("")}
+    </div>`;
+}
+
+function buildSupport() {
+  const opts = [
+    ["promo", t().sup_promo],
+    ["space", t().sup_space],
+    ["people", t().sup_people],
+    ["media", t().sup_media],
+    ["web", t().sup_web],
+    ["org", t().sup_org],
+    ["dunno", t().sup_dunno],
+    ["none", t().sup_none],
+  ];
+  return `
+    <div class="q-label">${t().step} 10</div>
+    <div class="q-text">${t().q_support}<br><small style="font-family:Nunito;font-size:0.82rem;color:var(--muted)">${t().support_hint}</small></div>
+    <div class="options">
+      ${opts.map(([v,l]) => `<button class="option checkbox${selectedSupport.includes(v)?' selected':''}" onclick="toggleSupport('${v}',this)">${l}</button>`).join("")}
+    </div>`;
+}
+
+function buildHomepage() {
+  const opts = [
+    ["yes", t().hp_yes],
+    ["maybe", t().hp_maybe],
+    ["no", t().hp_no],
+  ];
+  return `
+    <div class="q-label">${t().step} 11</div>
+    <div class="q-text">${t().q_homepage}</div>
+    <div class="options">
+      ${opts.map(([v,l]) => `<button class="option${answers.homepage===v?' selected':''}" onclick="selectOption('homepage','${v}',this)">${l}</button>`).join("")}
+    </div>`;
+}
+
+function buildNotes() {
+  return `
+    <div class="q-label">${t().step} 12 <span style="font-weight:400;text-transform:none;letter-spacing:0;">${t().optional}</span></div>
+    <div class="q-text">${t().q_notes}</div>
+    <textarea class="text-input" placeholder="${t().ph_notes}"
+      oninput="onTextOptional('notes',this.value)">${answers.notes||''}</textarea>`;
+}
+
+// ════════════════════════════════════════
+//  INTERACTIONS
+// ════════════════════════════════════════
+function chooseLang(l, ev) {
+  lang = l;
+  answers.lang = l;
+  document.querySelector(".sub").textContent = t().header_sub;
+  document.querySelectorAll(".lang-btn").forEach(b => { b.style.borderColor=""; b.style.background=""; });
+  if (ev) { ev.currentTarget.style.borderColor="var(--green)"; ev.currentTarget.style.background="rgba(45,106,79,0.07)"; }
+  document.getElementById("btn-next").disabled = false;
+}
+
+function chooseInterested() {
+  currentStep++;
+  render();
+  show("survey-view");
+}
+
+function chooseNotInterested() {
+  // Save "no interest" entry
+  const entry = {
+    ts: new Date().toISOString(),
+    lang,
+    type: "no_interest"
+  };
+  saveToStorage(entry);
+  sendToSheet(entry);
+
+  // Show no-interest screen
+  document.getElementById("no-title").textContent = t().no_title;
+  document.getElementById("no-text").textContent = t().no_text;
+  document.getElementById("no-results-btn").textContent = t().results_btn;
+  pinGoBackTarget = "no-view";
+  show("no-view");
+}
+
+function selectOption(key, val, el) {
+  answers[key] = val;
+  el.closest(".options").querySelectorAll(".option").forEach(o => o.classList.remove("selected"));
+  el.classList.add("selected");
+  document.getElementById("btn-next").disabled = false;
+}
+
+function toggleActivity(val, el) {
+  const idx = selectedActivities.indexOf(val);
+  if (idx > -1) selectedActivities.splice(idx, 1);
+  else selectedActivities.push(val);
+  el.classList.toggle("selected", selectedActivities.includes(val));
+  document.getElementById("btn-next").disabled = selectedActivities.length === 0;
+  // Re-render to show/hide own field
+  const card = document.getElementById("q-card");
+  card.innerHTML = buildActivities();
+}
+
+function toggleSupport(val, el) {
+  const idx = selectedSupport.indexOf(val);
+  if (idx > -1) selectedSupport.splice(idx, 1);
+  else selectedSupport.push(val);
+  el.classList.toggle("selected", selectedSupport.includes(val));
+  document.getElementById("btn-next").disabled = selectedSupport.length === 0;
+}
+
+function onText(key, val) {
+  answers[key] = val.trim();
+  document.getElementById("btn-next").disabled = val.trim() === "";
+}
+
+function onTextOptional(key, val) {
+  answers[key] = val.trim();
+}
+
+function onContactChange() {
+  const phone = document.getElementById("inp-phone")?.value.trim() || "";
+  const email = document.getElementById("inp-email")?.value.trim() || "";
+  answers.phone = phone;
+  answers.email = email;
+  document.getElementById("btn-next").disabled = !(phone || email);
+}
+
+// ════════════════════════════════════════
+//  NAVIGATION
+// ════════════════════════════════════════
+function goNext() {
+  if (currentStep < FLOW.length - 1) {
+    currentStep++;
+    render();
+  } else {
+    saveResponse();
+    showThankYou();
+  }
+}
+
+function goBack() {
+  if (currentStep > 0) { currentStep--; render(); }
+}
+
+// ════════════════════════════════════════
+//  SAVE
+// ════════════════════════════════════════
+function saveToStorage(entry) {
+  const all = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+  all.push(entry);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
+}
+
+function sendToSheet(entry) {
+  fetch(SHEET_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(entry)
+  }).catch(err => console.log("Sheet sync error:", err));
+}
+
+function saveResponse() {
+  const entry = {
+    ts: new Date().toISOString(),
+    type: "interested",
+    lang,
+    name: answers.name || "",
+    phone: answers.phone || "",
+    email: answers.email || "",
+    culture: answers.culture || "",
+    groupname: answers.groupname || "",
+    activities: selectedActivities,
+    ownActivity: answers.ownActivity || "",
+    solo: answers.solo || "",
+    concrete: answers.concrete || "",
+    support: selectedSupport,
+    homepage: answers.homepage || "",
+    notes: answers.notes || ""
+  };
+  saveToStorage(entry);
+  sendToSheet(entry);
+}
+
+// ════════════════════════════════════════
+//  VIEWS
+// ════════════════════════════════════════
+function showThankYou() {
+  document.getElementById("ty-title").textContent = t().ty_title;
+  document.getElementById("ty-text").textContent = t().ty_text;
+  document.getElementById("results-btn-label").textContent = t().results_btn;
+  pinGoBackTarget = "ty-view";
+  show("ty-view");
+}
+
+function showPinScreen() {
+  pinInput = "";
+  updatePinDots();
+  document.getElementById("pin-error").textContent = "";
+  show("pin-view");
+}
+
+// ════════════════════════════════════════
+//  PIN
+// ════════════════════════════════════════
+let pinInput = "";
+
+async function pinKey(d) {
+  if (pinInput.length >= 4) return;
+  pinInput += d;
+  updatePinDots();
+  if (pinInput.length === 4) {
+    setTimeout(async () => {
+      const msgBuffer = new TextEncoder().encode(pinInput);
+      const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hash = hashArray.map(b => b.toString(16).padStart(2,"0")).join("");
+      if (hash === ADMIN_PIN_HASH) {
+        showResults();
+      } else {
+        document.getElementById("pin-error").textContent = T[lang]?.pin_err || "Falscher PIN.";
+        document.getElementById("pin-error").style.animation = "none";
+        document.getElementById("pin-error").offsetHeight;
+        document.getElementById("pin-error").style.animation = "shake 0.3s ease";
+        pinInput = ""; updatePinDots();
+      }
+    }, 200);
+  }
+}
+
+function pinDel() {
+  pinInput = pinInput.slice(0, -1);
+  updatePinDots();
+  document.getElementById("pin-error").textContent = "";
+}
+
+function updatePinDots() {
+  for (let i = 0; i < 4; i++)
+    document.getElementById("d"+i).classList.toggle("filled", i < pinInput.length);
+}
+
+function pinGoBack() {
+  show(pinGoBackTarget);
+}
+
+// ════════════════════════════════════════
+//  RESULTS
+// ════════════════════════════════════════
+function showResults() {
+  document.getElementById("results-body").innerHTML = `<div style="color:var(--muted);text-align:center;padding:30px 0;">⏳ Lade Antworten...</div>`;
+  document.getElementById("resp-count").textContent = "...";
+  document.getElementById("stat-interested").textContent = "–";
+  document.getElementById("stat-no").textContent = "–";
+  document.getElementById("stat-total").textContent = "–";
+  show("results-view");
+
+  fetch(SHEET_URL + "?t=" + Date.now(), { mode: "cors" })
+    .then(r => r.json())
+    .then(all => {
+      const interested = all.filter(r => r.type === "interested");
+      const noInterest = all.filter(r => r.type === "no_interest");
+      const total = all.length;
+
+      document.getElementById("resp-count").textContent = total + (total===1?" Eintrag":" Einträge");
+      document.getElementById("stat-interested").textContent = interested.length;
+      document.getElementById("stat-no").textContent = noInterest.length;
+      document.getElementById("stat-total").textContent = total;
+
+      if (interested.length === 0) {
+        document.getElementById("results-body").innerHTML = `<div style="color:var(--muted);text-align:center;padding:20px 0;">Noch keine Interessenten.</div>`;
+        return;
+      }
+
+      const actLabels = { music:"🥁 Musik", dance:"💃 Tanz", fashion:"👗 Mode", language:"🗣 Sprache", art:"🎨 Kunst", own:"💡 Eigene Idee" };
+      const supLabels = { promo:"📣 Werbung", space:"🏠 Raum", people:"👥 Mitstreiter", media:"📸 Social Media", web:"🌐 Homepage", org:"📋 Organisation", dunno:"💡 Weiß nicht", none:"🙌 Nichts" };
+      const soloMap = { alone:"🙋 Alleine", have:"👥 Hat Mitstreiter", search:"🔍 Sucht Mitstreiter" };
+      const concreteMap = { clear:"✅ Klare Idee", rough:"💭 Grobe Idee", open:"🌱 Offen" };
+      const hpMap = { yes:"✅ Ja", maybe:"🤔 Noch nicht sicher", no:"❌ Nein" };
+      const langFlag = { de:"🇩🇪", en:"🇬🇧", fr:"🇫🇷" };
+
+      let html = "";
+      interested.forEach((r) => {
+        const when = new Date(r.ts).toLocaleDateString("de-DE", {day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});
+        const flag = langFlag[r.lang] || "🌍";
+        html += `<div class="r-item" style="border-left:4px solid var(--green);margin-bottom:16px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+            <div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--green);font-weight:700;">👤 ${r.name||"–"}</div>
+            <div style="font-size:11px;color:var(--muted);">${flag} ${when}</div>
+          </div>`;
+        if (r.phone) html += row("📱 WhatsApp", r.phone);
+        if (r.email) html += row("📧 E-Mail", r.email);
+        if (r.culture) html += row("🌍 Kultur/Land", r.culture);
+        if (r.groupname) html += row("✨ Gruppenname", r.groupname);
+        if (r.activities && r.activities.length > 0) {
+          const actStr = r.activities.map(a => actLabels[a]||a).join(", ");
+          html += row("🎭 Aktivitäten", actStr);
+          if (r.ownActivity) html += row("💡 Eigene Idee", `"${r.ownActivity}"`);
+        }
+        if (r.solo) html += row("👥 Umsetzung", soloMap[r.solo]||r.solo);
+        if (r.concrete) html += row("💡 Konkretheit", concreteMap[r.concrete]||r.concrete);
+        if (r.support && r.support.length > 0) {
+          html += row("🤝 Unterstützung", r.support.map(s=>supLabels[s]||s).join(", "));
+        }
+        if (r.homepage) html += row("🌐 Homepage", hpMap[r.homepage]||r.homepage);
+        if (r.notes) html += row("📝 Anmerkungen", `"${r.notes}"`);
+        html += `</div>`;
+      });
+
+      document.getElementById("results-body").innerHTML = html;
+    })
+    .catch(() => {
+      document.getElementById("results-body").innerHTML = `<div style="color:var(--muted);text-align:center;padding:30px 0;">❌ Fehler beim Laden.</div>`;
+    });
+}
+
+function row(label, value) {
+  return `<div class="r-person-row"><span class="r-person-label">${label}</span><span class="r-person-value">${value}</span></div>`;
+}
+
+// ════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════
+render();
+</script>
+</body>
+</html>
